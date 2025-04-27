@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fitness Tracker Dashboard</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .card {
+      margin: 20px 0;
+      text-align: center;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .dashboard {
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      margin: 30px 0;
+    }
+    .progress {
+      height: 20px;
+      border-radius: 10px;
+    }
+    .card-body {
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container dashboard">
+    <h2 class="text-center">Fitness Tracker Dashboard</h2>
+    
+    <div class="row">
+      <!-- Water Intake -->
+      <div class="col-md-6">
+        <div class="card text-white bg-info">
+          <div class="card-body">
+            <h5 class="card-title">Water Intake</h5>
+            <p id="water">0 L</p>
+            <p>Goal is 4 Liters</p>
+            <div class="progress mb-5">
+              <div class="progress-bar bg-light text-dark" id="waterProgress" style="width: 0%">0%</div>
+            </div>
+            <button class="btn btn-light" id="addWater">+ 500 ml</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calories Burned -->
+      <div class="col-md-6">
+        <div class="card text-white bg-warning">
+          <div class="card-body">
+            <h5 class="card-title">Calories Burned</h5>
+            <p id="calories">0 kcal</p>
+            <p>Goal=600</p>
+            <div class="progress mb-2">
+              <div class="progress-bar bg-light text-dark" id="caloriesProgress" style="width: 0%">0%</div>
+            </div>
+            <button class="btn btn-light" id="addCalories">+100 kcal</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Steps Taken -->
+      <div class="col-md-6">
+        <div class="card text-white bg-success">
+          <div class="card-body">
+            <h5 class="card-title">Steps Taken</h5>
+            <p id="steps">0 steps</p>
+            <p>Goal=10000 steps</p>
+            <div class="progress mb-2">
+              <div class="progress-bar bg-light text-dark" id="stepsProgress" style="width: 0%">0%</div>
+            </div>
+            <button class="btn btn-light" id="addSteps">+500 steps</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sleep Duration -->
+      <div class="col-md-6">
+        <div class="card text-white bg-secondary">
+          <div class="card-body">
+            <h5 class="card-title">Sleep Duration</h5>
+            <p id="sleep">0 hrs</p>
+            <p>Goal=8 hrs</p>
+            <div class="progress mb-2">
+              <div class="progress-bar bg-light text-dark" id="sleepProgress" style="width: 0%">0%</div>
+            </div>
+            <button class="btn btn-light" id="addSleep">+1 hr</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card text-white bg-secondary">
+        <div class="card-body">
+            <h5 class="card-title">Workout Time</h5>
+            <p id="workout">0 hrs</p>
+            <p>Goal=2 hrs</p>
+            <div class="progress mb-2">
+                <div class="progress-bar bg-light text-dark" id="workoutProgress" style="width: 0%">0%</div>
+            </div>
+            <button class="btn btn-light" id="addWrkOut">+1hr</button>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+  </div>
+
+  <!-- Workout Time-->
+    
+
+
+  <!-- jQuery and Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    let water = 0, calories = 0, steps = 0, sleep = 0, workout=0;
+
+    const maxWater = 4;    
+    const maxCalories = 500; 
+    const maxSteps = 10000; 
+    const maxSleep = 8;
+    const maxWorkOut=2;    
+
+    function updateProgress(id, value, max) {
+      let percent = Math.min((value / max) * 100, 100);
+      $(`#${id}Progress`).css('width', percent + '%').text(Math.floor(percent) + '%');
+    }
+
+    $('#addWater').click(function () {
+      water += 0.5;
+      $('#water').text(water.toFixed(1) + ' L');
+      updateProgress('water', water, maxWater);
+    });
+
+    $('#addCalories').click(function () {
+      calories += 100;
+      $('#calories').text(calories + ' kcal');
+      updateProgress('calories', calories, maxCalories);
+    });
+
+    $('#addSteps').click(function () {
+      steps += 500;
+      $('#steps').text(steps + ' steps');
+      updateProgress('steps', steps, maxSteps);
+    });
+
+    $('#addSleep').click(function () {
+      sleep += 1;
+      $('#sleep').text(sleep + ' hrs');
+      updateProgress('sleep', sleep, maxSleep);
+    });
+
+    $('#addWrkOut').click(function () {
+    workout += 1;
+    $('#workout').text(workout + ' hrs');
+    updateProgress('workout', workout, maxWorkOut);
+    });
+  </script>
+</body>
+</html>
