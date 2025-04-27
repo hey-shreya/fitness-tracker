@@ -1,0 +1,103 @@
+body {
+    background-color: #e9ecf1de;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.dashboard {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.card-custom {
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    padding: 10px;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.card-custom:hover {
+    transform: translateY(-5px); /* Slight elevation on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Stronger shadow effect */
+}
+
+h2 {
+    font-weight: bold;
+}
+
+.progress {
+    height: 15px;
+    border-radius: 10px;
+}
+
+.progress-bar {
+    background-color: #6c757d;
+}
+
+.bg-light-blue {
+    background-color: #86c4f3;
+}
+
+.bg-light-yellow {
+    background-color: #f5d95e;
+}
+
+.bg-light-green {
+    background-color: #a6f2b0;
+}
+
+.bg-light-gray {
+    background-color: #f8b85f;
+}
+
+.bg-light-purple {
+    background-color: #b39fe7;
+}
+
+.bg-light-pink {
+    background-color: #f694c6;
+}
+
+.gap-2 > * {
+    margin-right: 10px;
+}
+
+/* Add hover effects for links, buttons, etc. */
+button {
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #e2e6ea; /* Slightly darker background */
+    transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+button:active {
+    background-color: #d6d8db; /* Active state */
+}
+
+button.btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+button.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+button.btn-success:hover {
+    background-color: #218838;
+}
+
+button.btn-danger:hover {
+    background-color: #c82333;
+}
